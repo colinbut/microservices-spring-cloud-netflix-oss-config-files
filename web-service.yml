@@ -9,3 +9,9 @@ eureka:
 
 server:
   port: 0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *

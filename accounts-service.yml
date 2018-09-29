@@ -17,3 +17,9 @@ eureka:
 # HTTP Server
 server:
   port: 0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
