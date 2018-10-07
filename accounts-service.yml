@@ -18,6 +18,11 @@ eureka:
 server:
   port: ${PORT:0}
 
+# The microservice instance attempts to register its presence with Eureka before this port assignment, 
+# resulting in a registration using the local IP address and a port number of zero (0), as does every subsequent 
+# instance of that microservice. This effectively restricts us to running a single instance of any local microservice 
+# we wish to register with a local Eureka instance. 
+# As a fix - we assign a unique instance-id, dynamically, to each of the instances for use by Eureka.
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
