@@ -4,6 +4,10 @@ server:
 management:
   security:
     enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 #Configure the Eureka Server
 eureka:
@@ -12,10 +16,3 @@ eureka:
   client: # Not a Client, don't register itself
     registerWithEureka: false
     fetchRegistry: false
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
